@@ -1,4 +1,4 @@
-const connnectionURL = 'mongodb://localhost:27017/'
+const connnectionURL = 'mongodb://127.0.0.1:27017'
 
 
 // async function connectDb() {
