@@ -29,14 +29,21 @@ MongoClient.connect(connnectionURL, {useUnifiedTopology: true, useNewUrlParser: 
   //  })
 
 
+  // try {
+  //   const result = await db.collection('tasks').updateMany({completed: false}, {$set: {completed: true}} )
+  //   console.log(result.result)
+  // }
+  // catch(err) {
+  //   console.log(err)
+  // }
+
   try {
-    const result = await db.collection('tasks').updateMany({completed: false}, {$set: {completed: true}} )
+    const result = await db.collection('tasks').deleteMany({completed: true})
     console.log(result.result)
-  }
+  }  
   catch(err) {
     console.log(err)
   }
-
 
  
 })
