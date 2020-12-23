@@ -10,9 +10,18 @@ MongoClient.connect(connnectionURL, {useUnifiedTopology: true, useNewUrlParser: 
 
   let db = client.db(database)  
 
-  const collection1 = db.collection('users').insertOne({username: 'johndoe1', fullname: 'John Doe'}, (err, result) => {
+  // const collection1 = db.collection('users').insertOne({username: 'johndoe1', fullname: 'John Doe'}, (err, result) => {
+  //   if(err) console.log(err)
+  // })
+
+  db.collection('tasks').insertMany([
+    {description: "At least 100 push-ups", completed: false}
+  ], (err, result) => {
     if(err) console.log(err)
-  })
+    console.log(result)
+  }
+  ) 
+
 
   console.log(`Connected successfully`)
  
