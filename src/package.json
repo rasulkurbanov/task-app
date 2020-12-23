@@ -1,0 +1,18 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "Task-app used to manage tasks on a daily basis with CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/rasulkurbanov/task-app.git"
+  },
+  "author": "Rasuljon Kurbanov",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  }
+}
