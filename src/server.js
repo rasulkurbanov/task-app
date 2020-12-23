@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient
+const { MongoClient, ObjectId } = require('mongodb')
 const connnectionURL = require('./db')
 const database = 'tasks-app'
 
@@ -14,15 +14,20 @@ MongoClient.connect(connnectionURL, {useUnifiedTopology: true, useNewUrlParser: 
   //   if(err) console.log(err)
   // })
 
-  db.collection('tasks').insertMany([
-    {description: "At least 100 push-ups", completed: false}
-  ], (err, result) => {
+  // db.collection('tasks').insertMany([
+  //   {description: "At least 100 push-ups", completed: false}
+  // ], (err, result) => {
+  //   if(err) console.log(err)
+  //   console.log(result)
+  // }
+  // ) 
+
+  db.collection('tasks').findOne({_id: ObjectId("5fe37f181b3aa6446b4a23c3")}, (err, result) => {
     if(err) console.log(err)
+
     console.log(result)
-  }
-  ) 
+   })
 
 
-  console.log(`Connected successfully`)
  
 })
